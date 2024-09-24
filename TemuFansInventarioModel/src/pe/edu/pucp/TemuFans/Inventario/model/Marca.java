@@ -5,7 +5,7 @@
 package pe.edu.pucp.TemuFans.Inventario.model;
 
 import java.util.ArrayList;
-import pe.edu.pucp.TemuFans.Persona.model.Proveedor;
+
 
 /**
  *
@@ -14,20 +14,19 @@ import pe.edu.pucp.TemuFans.Persona.model.Proveedor;
 public class Marca {
     private String nombre;
     private String descripcion;
-    private Proveedor proveedor; 
     private ArrayList<Producto> productos;
     
 
-    public Marca(String nombre, String descripcion, Proveedor proveedor) {
+    public Marca(String nombre, String descripcion) {
         this.nombre = nombre;
         this.descripcion = descripcion;
-        this.proveedor = proveedor;
+       
     }
     
     public Marca() {
         this.nombre = null;
         this.descripcion = null;
-        this.proveedor = null;
+        
     }
     
     /**
@@ -61,16 +60,7 @@ public class Marca {
     /**
      * @return the proveedor
      */
-    public Proveedor getProveedor() {
-        return proveedor;
-    }
-
-    /**
-     * @param proveedor the proveedor to set
-     */
-    public void setProveedor(Proveedor proveedor) {
-        this.proveedor = proveedor;
-    }
+   
     
     
 }

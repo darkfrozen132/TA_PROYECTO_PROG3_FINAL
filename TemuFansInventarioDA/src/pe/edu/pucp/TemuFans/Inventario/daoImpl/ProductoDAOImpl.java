@@ -2,12 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package pe.edu.pucp.SoftTemuFans.daoImpl;
+package pe.edu.pucp.TemuFans.Inventario.daoImpl;
 
 import java.util.ArrayList;
-import pe.edu.pucp.SoftTemuFans.Inventario.model.Producto;
-import pe.edu.pucp.SoftTemuFans.dao.ProductoDAO;
-import pe.edu.pucp.SoftTemuFans.db.DAOImpl;
+import pe.edu.pucp.TemuFans.Inventario.model.Producto;
+import pe.edu.pucp.TemuFans.Inventario.dao.ProductoDAO;
+import pe.edu.pucp.TemuFans.db.DAOImpl;
 
 /**
  *
@@ -48,6 +48,11 @@ public class ProductoDAOImpl extends DAOImpl implements ProductoDAO{
 
     @Override
     public ArrayList<Producto> listarTodos() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    protected String obtenerListaDeAtributosYValoresParaUpdate() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }

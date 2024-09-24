@@ -4,17 +4,23 @@
  */
 package temufansdbmanagertest;
 
-/**
- *
- * @author leoncio
- */
+import java.sql.Connection;
+import pe.edu.pucp.TemuFans.config.DBManager;
+
+
 public class TemuFansDBManagerTest {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        //DBManager dbManager = new DBManager();
+        DBManager dbManager = null;
+        System.out.println(dbManager);
+        dbManager = DBManager.getInstance();
+        System.out.println(dbManager);
+        dbManager = DBManager.getInstance();
+        System.out.println(dbManager);
+        dbManager = DBManager.getInstance();
+        System.out.println(dbManager);
+        Connection conexion = dbManager.getConnection();        
     }
     
 }

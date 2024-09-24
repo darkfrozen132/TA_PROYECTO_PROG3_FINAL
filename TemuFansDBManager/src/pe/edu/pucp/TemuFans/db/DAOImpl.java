@@ -150,3 +150,4 @@ public abstract class DAOImpl {
     protected abstract String obtenerListaDeValoresParaInsert();
     protected abstract String obtenerListaDeAtributosYValoresParaUpdate();
 }
+//insert into TABLA values(id,);

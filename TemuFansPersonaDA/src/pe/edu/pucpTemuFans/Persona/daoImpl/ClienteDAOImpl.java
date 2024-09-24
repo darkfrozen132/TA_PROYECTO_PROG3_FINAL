@@ -35,12 +35,14 @@ public class ClienteDAOImpl extends DAOImpl implements ClienteDAO{
 
     @Override
     public Integer insertar(Cliente cliente) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.cliente=cliente;
+        return this.insertar();
     }
 
     @Override
     public Integer modificar(Cliente cliente) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        
+        return this.modificar(" ");
     }
 
     @Override

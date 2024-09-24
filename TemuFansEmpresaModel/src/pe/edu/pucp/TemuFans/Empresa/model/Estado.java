@@ -9,5 +9,5 @@ package pe.edu.pucp.TemuFans.Empresa.model;
  * @author Ricardo
  */
 public enum Estado {
-    
+    ACTIVO, INACTIVO
 }

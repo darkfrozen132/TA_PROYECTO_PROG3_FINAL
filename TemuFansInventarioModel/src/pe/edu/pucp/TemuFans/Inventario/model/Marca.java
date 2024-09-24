@@ -5,8 +5,8 @@
 package pe.edu.pucp.TemuFans.Inventario.model;
 
 import java.util.ArrayList;
-import pe.edu.pucp.TemuFans.Persona.model.Proveedor;
 
+//Hola como estas
 /**
  *
  * @author usuario

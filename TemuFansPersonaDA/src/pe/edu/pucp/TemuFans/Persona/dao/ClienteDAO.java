@@ -2,10 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package pe.edu.pucp.SoftTemuFans.Persona.dao;
+package pe.edu.pucp.TemuFans.Persona.dao;
 
 import java.util.ArrayList;
-import pe.edu.pucp.SoftTemuFans.Persona.model.Cliente;
+import pe.edu.pucp.TemuFans.Persona.model.Cliente;
 /**
  *
  * @author usuario

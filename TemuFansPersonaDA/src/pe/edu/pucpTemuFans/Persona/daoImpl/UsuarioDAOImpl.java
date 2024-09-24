@@ -42,12 +42,15 @@ public class UsuarioDAOImpl extends DAOImpl implements UsuarioDAO{
     }
 
     @Override
-    protected String obtenerListaDeAtributosParaInsert() {
+    protected  String obtenerListaDeAtributosParaInsert(){
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-
     @Override
-    protected String obtenerListaDeValoresParaInsert() {
+    protected  String obtenerListaDeValoresParaInsert(){
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+    @Override
+    protected  String obtenerListaDeAtributosYValoresParaUpdate(){
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     

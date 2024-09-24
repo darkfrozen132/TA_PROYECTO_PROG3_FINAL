@@ -6,8 +6,8 @@ package pe.edu.pucpTemuFans.Persona.daoImpl;
 
 import java.util.ArrayList;
 import pe.edu.pucp.TemuFans.Persona.dao.EmpleadoDAO;
-import pe.edu.pucp.SoftTemuFans.Persona.model.Empleado;
-import pe.edu.pucp.SoftTemuFans.db.DAOImpl;
+import pe.edu.pucp.TemuFans.Persona.model.Empleado;
+import pe.edu.pucp.TemuFans.db.DAOImpl;
 
 /**
  *
@@ -22,12 +22,15 @@ public class EmpleadoDAOImpl extends DAOImpl implements EmpleadoDAO{
         this.empleado = null;
     }
     @Override
-    protected String obtenerListaDeAtributosParaInsert() {
+    protected  String obtenerListaDeAtributosParaInsert(){
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-
     @Override
-    protected String obtenerListaDeValoresParaInsert() {
+    protected  String obtenerListaDeValoresParaInsert(){
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+    @Override
+    protected  String obtenerListaDeAtributosYValoresParaUpdate(){
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 

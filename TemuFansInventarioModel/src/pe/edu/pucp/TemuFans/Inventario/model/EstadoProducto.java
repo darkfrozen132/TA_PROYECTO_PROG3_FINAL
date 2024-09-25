@@ -8,6 +8,6 @@ package pe.edu.pucp.TemuFans.Inventario.model;
  *
  * @author usuario
  */
-public enum TipoProducto {
+public enum EstadoProducto {
     ACTIVO, INACTIVO
 }

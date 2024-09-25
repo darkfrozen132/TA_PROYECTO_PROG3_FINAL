@@ -23,27 +23,44 @@ public class ProductoDAOImpl extends DAOImpl implements ProductoDAO{
 
     @Override
     protected String obtenerListaDeAtributosParaInsert() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return "idProducto, idMarca, SKU, nombre, precioUnitario, tipo, estadoProducto";
     }
 
     @Override
     protected String obtenerListaDeValoresParaInsert() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String sql = "";
+        sql = sql.concat(this.producto.getIdProducto().toString());
+        sql = sql.concat(", ");
+        sql = sql.concat("'" + this.producto.getIdMarca().toString()+ "'");
+        sql = sql.concat(", ");
+        sql = sql.concat("'" + this.producto.getSKU()+ "'");
+        sql = sql.concat(", ");
+        sql = sql.concat("'" + this.producto.getNombre()+ "'");
+        sql = sql.concat(", ");
+        sql = sql.concat("'" + this.producto.getPrecioUnitario().toString()+ "'");
+        sql = sql.concat(", ");
+        sql = sql.concat("'" + this.producto.getTipo()+ "'");
+        sql = sql.concat(", ");
+        sql = sql.concat("'" + this.producto.getEstadoProducto().toString()+ "'");
+        return sql;
     }
 
     @Override
     public Integer insertar(Producto producto) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.producto = producto;
+        return insertar();
     }
 
     @Override
     public Integer modificar(Producto producto) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.producto = producto;
+        return modificar();
     }
 
     @Override
     public Integer eliminar(Producto producto) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.producto = producto;
+        return eliminar();
     }
 
     @Override
@@ -53,11 +70,25 @@ public class ProductoDAOImpl extends DAOImpl implements ProductoDAO{
 
     @Override
     protected String obtenerListaDeAtributosYValoresParaUpdate() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String sql = "";
+        sql = sql.concat("idProducto = " + this.producto.getIdProducto().toString());
+        sql = sql.concat(", ");
+        sql = sql.concat("idMarca = '" + this.producto.getIdMarca()+ "'");
+        sql = sql.concat(", ");
+        sql = sql.concat("SKU = '" + this.producto.getSKU()+ "'");        
+        sql = sql.concat(", ");
+        sql = sql.concat("nombre = '" + this.producto.getNombre()+ "'");        
+        sql = sql.concat(", ");
+        sql = sql.concat("precioUnitario = '" + this.producto.getPrecioUnitario().toString()+ "'");        
+        sql = sql.concat(", ");
+        sql = sql.concat("tipo = '" + this.producto.getTipo()+ "'");        
+        sql = sql.concat(", ");
+        sql = sql.concat("estadoProducto = '" + this.producto.getEstadoProducto().toString()+ "'");        
+        return sql;
     }
 
     @Override
     protected String obtenerCondicionWhereId() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return "idProducto="+producto.getIdProducto().toString();
     }
 }

@@ -23,7 +23,8 @@ public class UsuarioDAOImpl extends DAOImpl implements UsuarioDAO{
 
     @Override
     public Integer insertar(Usuario usuario) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.usuario=usuario;
+        return this.insertar();
     }
 
     @Override
@@ -43,7 +44,7 @@ public class UsuarioDAOImpl extends DAOImpl implements UsuarioDAO{
 
     @Override
     protected  String obtenerListaDeAtributosParaInsert(){
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return "idUsuario,tipo_usuario,tipo_doi,doi,nombre,correo";
     }
     @Override
     protected  String obtenerListaDeValoresParaInsert(){

@@ -133,7 +133,7 @@ public abstract class DAOImpl {
         String sql = "UPDATE " + this.nombre_tabla;
         sql = sql.concat(" SET ");
         sql = sql.concat(this.obtenerListaDeAtributosYValoresParaUpdate());
-        sql = sql.concat(" WHERE "+obtenerId());
+        sql = sql.concat(" WHERE "+obtenerCondicionWhereId());
         
         return sql;
     }
@@ -141,7 +141,7 @@ public abstract class DAOImpl {
 
     private String generarSQLParaEliminacion() {
         String sql = "DELETE FROM " + this.nombre_tabla;
-        sql = sql.concat(" WHERE "+obtenerId());
+        sql = sql.concat(" WHERE "+obtenerCondicionWhereId());
         
         return sql;
     }
@@ -150,7 +150,7 @@ public abstract class DAOImpl {
     protected abstract String obtenerListaDeAtributosParaInsert();
     protected abstract String obtenerListaDeValoresParaInsert();
     protected abstract String obtenerListaDeAtributosYValoresParaUpdate();
-    protected abstract String obtenerId();
+    protected abstract String obtenerCondicionWhereId();
     
 }
 //insert into TABLA values(id,);

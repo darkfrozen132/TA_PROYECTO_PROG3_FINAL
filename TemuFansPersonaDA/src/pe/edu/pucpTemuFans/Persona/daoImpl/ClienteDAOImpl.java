@@ -59,16 +59,17 @@ public class ClienteDAOImpl extends DAOImpl implements ClienteDAO{
 
     @Override
     public Integer eliminar(Cliente cliente) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.cliente=cliente;
+        return this.eliminar();
     }
 
     @Override
-    public ArrayList<Cliente> listarTodos() {
+    public ArrayList<Cliente> listarTodos() {        
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
     @Override
-    protected String obtenerId(){
+    protected String obtenerCondicionWhereId(){
         return "idCliente="+cliente.getIdCliente().toString(); 
     }
     

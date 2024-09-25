@@ -12,22 +12,21 @@ import java.util.ArrayList;
  * @author usuario
  */
 public class Marca {
+    private Integer idMarca;
     private String nombre;
     private String descripcion;
-   
-    private ArrayList<Producto> productos;
     
 
-    public Marca(String nombre, String descripcion) {
+    public Marca(Integer idMarca, String nombre, String descripcion) {
         this.nombre = nombre;
         this.descripcion = descripcion;
-       
+        this.idMarca = idMarca;
     }
     
     public Marca() {
         this.nombre = null;
         this.descripcion = null;
-       
+        this.idMarca = null;
     }
     
     /**
@@ -56,6 +55,20 @@ public class Marca {
      */
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+
+    /**
+     * @return the idMarca
+     */
+    public Integer getIdMarca() {
+        return idMarca;
+    }
+
+    /**
+     * @param idMarca the idMarca to set
+     */
+    public void setIdMarca(Integer idMarca) {
+        this.idMarca = idMarca;
     }
 
     

@@ -23,27 +23,36 @@ public class MarcaDAOImpl extends DAOImpl implements MarcaDAO{
 
     @Override
     protected String obtenerListaDeAtributosParaInsert() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return "idMarca, nombre, descripcion";
     }
 
     @Override
     protected String obtenerListaDeValoresParaInsert() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String sql = "";
+        sql = sql.concat(this.marca.getIdMarca().toString());
+        sql = sql.concat(", ");
+        sql = sql.concat("'" + this.marca.getNombre()+ "'");
+        sql = sql.concat(", ");
+        sql = sql.concat("'" + this.marca.getDescripcion()+ "'");
+        return sql;
     }
 
     @Override
     public Integer insertar(Marca marca) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.marca = marca;
+        return insertar();
     }
 
     @Override
     public Integer modificar(Marca marca) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.marca = marca;
+        return modificar();
     }
 
     @Override
     public Integer eliminar(Marca marca) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.marca = marca;
+        return eliminar();
     }
 
     @Override
@@ -53,11 +62,18 @@ public class MarcaDAOImpl extends DAOImpl implements MarcaDAO{
 
     @Override
     protected String obtenerListaDeAtributosYValoresParaUpdate() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String sql = "";
+        sql = sql.concat("idMarca = " + this.marca.getIdMarca().toString());
+        sql = sql.concat(", ");
+        sql = sql.concat("nombre = '" + this.marca.getNombre()+ "'");
+        sql = sql.concat(", ");
+        sql = sql.concat("descripcion = '" + this.marca.getDescripcion()+ "'");        
+        return sql;
+
     }
 
     @Override
     protected String obtenerCondicionWhereId() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return "idMarca="+marca.getIdMarca().toString(); 
     }
 }

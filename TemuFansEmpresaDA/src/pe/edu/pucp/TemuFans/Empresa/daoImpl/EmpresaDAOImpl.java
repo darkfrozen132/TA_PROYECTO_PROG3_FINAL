@@ -5,20 +5,20 @@
 package pe.edu.pucp.TemuFans.Empresa.daoImpl;
 
 import java.util.ArrayList;
-import pe.edu.pucp.TemuFans.Empresa.dao.CuentaBancariaDAO;
-import pe.edu.pucp.TemuFans.Empresa.model.CuentaBancaria;
+import pe.edu.pucp.TemuFans.Empresa.dao.EmpresaDAO;
+import pe.edu.pucp.TemuFans.Empresa.model.Empresa;
 import pe.edu.pucp.TemuFans.db.DAOImpl;
 
 /**
  *
  * @author Ricardo
  */
-public class CuentaBancariaDAOImpl extends DAOImpl implements CuentaBancariaDAO{
-    private CuentaBancaria cuentaBancaria;
+public class EmpresaDAOImpl extends DAOImpl implements EmpresaDAO {
+    private Empresa empresa;
 
-    public CuentaBancariaDAOImpl() {
-        super("CuentaBancaria");
-        this.cuentaBancaria=null;
+    public EmpresaDAOImpl(String nombre_tabla) {
+        super("Empresa");
+        this.empresa=null;
     }
     @Override
     protected String obtenerListaDeAtributosParaInsert() {
@@ -36,22 +36,22 @@ public class CuentaBancariaDAOImpl extends DAOImpl implements CuentaBancariaDAO{
     }
 
     @Override
-    public Integer insertar(CuentaBancaria cuentaBancaria) {
+    public Integer insertar(Empresa empresa) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public Integer modificar(CuentaBancaria cuentaBancaria) {
+    public Integer modificar(Empresa empresa) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public Integer eliminar(CuentaBancaria cuentaBancaria) {
+    public Integer eliminar(Empresa empresa) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public ArrayList<CuentaBancaria> listarTodos() {
+    public ArrayList<Empresa> listarTodos() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     

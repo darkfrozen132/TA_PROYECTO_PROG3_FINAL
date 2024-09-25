@@ -15,14 +15,12 @@ public class Almacen {
     private String direccion;
     private Integer cantidadTorres;
     private ArrayList<Torre> torres;
-    private Dimension dimension;
 
-    public Almacen(String idAlmacen, String direccion, Integer cantidadTorres, ArrayList<Torre> torres, Dimension dimension) {
+    public Almacen(String idAlmacen, String direccion, Integer cantidadTorres, ArrayList<Torre> torres) {
         this.idAlmacen = idAlmacen;
         this.direccion = direccion;
         this.cantidadTorres = cantidadTorres;
         this.torres = torres;
-        this.dimension = dimension;
     }
 
     public Almacen() {
@@ -30,7 +28,6 @@ public class Almacen {
         this.direccion = null;
         this.cantidadTorres = null;
         this.torres = null;
-        this.dimension = null;
     }
 
     /**
@@ -87,20 +84,6 @@ public class Almacen {
      */
     public void setTorres(ArrayList<Torre> torres) {
         this.torres = torres;
-    }
-
-    /**
-     * @return the dimension
-     */
-    public Dimension getDimension() {
-        return dimension;
-    }
-
-    /**
-     * @param dimension the dimension to set
-     */
-    public void setDimension(Dimension dimension) {
-        this.dimension = dimension;
     }
     
 }

@@ -13,15 +13,13 @@ public class Paquete {
     private Double pesoMaximoApilado;
     private Integer cantidadProductos;
     private Producto producto;
-    private Dimension dimension;
     private Torre torre;
 
-    public Paquete(String idPaquete, Double pesoMaximoApilado, Integer cantidadProductos, Producto producto, Dimension dimension, Torre torre) {
+    public Paquete(String idPaquete, Double pesoMaximoApilado, Integer cantidadProductos, Producto producto, Torre torre) {
         this.idPaquete = idPaquete;
         this.pesoMaximoApilado = pesoMaximoApilado;
         this.cantidadProductos = cantidadProductos;
         this.producto = producto;
-        this.dimension = dimension;
         this.torre = torre;
     }
 
@@ -30,7 +28,6 @@ public class Paquete {
         this.pesoMaximoApilado = null;
         this.cantidadProductos = null;
         this.producto = null;
-        this.dimension = null;
         this.torre = null;
     }
 
@@ -88,20 +85,6 @@ public class Paquete {
      */
     public void setProducto(Producto producto) {
         this.producto = producto;
-    }
-
-    /**
-     * @return the dimension
-     */
-    public Dimension getDimension() {
-        return dimension;
-    }
-
-    /**
-     * @param dimension the dimension to set
-     */
-    public void setDimension(Dimension dimension) {
-        this.dimension = dimension;
     }
 
     /**

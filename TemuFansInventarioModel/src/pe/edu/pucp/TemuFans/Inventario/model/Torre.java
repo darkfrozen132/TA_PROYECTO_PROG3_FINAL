@@ -17,10 +17,9 @@ public class Torre {
     private Double peso;
     private Integer cantidadPaquetes; // Solo necesitamos la cantidad de paquetes
     private Paquete paquete; // para saber que tipo de paquetes tiene la torre
-    private Dimension dimension;
     private Almacen almacen;
 
-    public Torre(String idTorre, Integer footprint, Integer cantidadFilas, Integer cantidadCima, Double peso, Integer cantidadPaquetes, Paquete paquete, Dimension dimension, Almacen almacen) {
+    public Torre(String idTorre, Integer footprint, Integer cantidadFilas, Integer cantidadCima, Double peso, Integer cantidadPaquetes, Paquete paquete, Almacen almacen) {
         this.idTorre = idTorre;
         this.footprint = footprint;
         this.cantidadFilas = cantidadFilas;
@@ -28,7 +27,6 @@ public class Torre {
         this.peso = peso;
         this.cantidadPaquetes = cantidadPaquetes;
         this.paquete = paquete;
-        this.dimension = dimension;
         this.almacen = almacen;
     }
     
@@ -40,7 +38,6 @@ public class Torre {
         this.peso = null;
         this.cantidadPaquetes = null;
         this.paquete = null;
-        this.dimension = null;
         this.almacen = null;
     }
 
@@ -140,20 +137,6 @@ public class Torre {
      */
     public void setPaquete(Paquete paquete) {
         this.paquete = paquete;
-    }
-
-    /**
-     * @return the dimension
-     */
-    public Dimension getDimension() {
-        return dimension;
-    }
-
-    /**
-     * @param dimension the dimension to set
-     */
-    public void setDimension(Dimension dimension) {
-        this.dimension = dimension;
     }
 
     /**

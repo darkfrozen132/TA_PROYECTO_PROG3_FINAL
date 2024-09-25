@@ -2,24 +2,25 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package pe.edu.pucp.TemuFans.Empresa.daoImpl;
+package pe.edu.pucp.TemuFans.Entrega.daoImpl;
 
 import java.util.ArrayList;
-import pe.edu.pucp.TemuFans.Empresa.dao.CuentaBancariaDAO;
-import pe.edu.pucp.TemuFans.Empresa.model.CuentaBancaria;
+import pe.edu.pucp.TemuFans.Entrega.dao.LineaEntregaDAO;
+import pe.edu.pucp.TemuFans.Entrega.model.LineaEntrega;
 import pe.edu.pucp.TemuFans.db.DAOImpl;
 
 /**
  *
- * @author Ricardo
+ * @author usuario
  */
-public class CuentaBancariaDAOImpl extends DAOImpl implements CuentaBancariaDAO{
-    private CuentaBancaria cuentaBancaria;
 
-    public CuentaBancariaDAOImpl() {
-        super("CuentaBancaria");
-        this.cuentaBancaria=null;
+public class LineaEntregaDAOImpl extends DAOImpl implements LineaEntregaDAO{
+    private LineaEntrega lineaEntrega;
+
+    public LineaEntregaDAOImpl() {
+        super("LineaEntrega");
     }
+
     @Override
     protected String obtenerListaDeAtributosParaInsert() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
@@ -36,22 +37,22 @@ public class CuentaBancariaDAOImpl extends DAOImpl implements CuentaBancariaDAO{
     }
 
     @Override
-    public Integer insertar(CuentaBancaria cuentaBancaria) {
+    public Integer insertar(LineaEntrega lineaEntrega) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public Integer modificar(CuentaBancaria cuentaBancaria) {
+    public Integer modificar(LineaEntrega lineaEntrega) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public Integer eliminar(CuentaBancaria cuentaBancaria) {
+    public Integer eliminar(LineaEntrega lineaEntrega) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public ArrayList<CuentaBancaria> listarTodos() {
+    public ArrayList<LineaEntrega> listarTodos() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     

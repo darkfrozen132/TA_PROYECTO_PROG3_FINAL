@@ -4,10 +4,54 @@
  */
 package pe.edu.pucp.TemuFans.Empresa.daoImpl;
 
+import java.util.ArrayList;
+import pe.edu.pucp.TemuFans.Empresa.dao.CuentaBancariaDAO;
+import pe.edu.pucp.TemuFans.Empresa.model.CuentaBancaria;
+import pe.edu.pucp.TemuFans.db.DAOImpl;
+
 /**
  *
  * @author Ricardo
  */
-public class CuentaBancariaDAOImpl {
+public class CuentaBancariaDAOImpl extends DAOImpl implements CuentaBancariaDAO{
+    private CuentaBancaria cuentaBancaria;
+
+    public CuentaBancariaDAOImpl(String nombre_tabla) {
+        super(nombre_tabla);
+    }
+    @Override
+    protected String obtenerListaDeAtributosParaInsert() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    protected String obtenerListaDeValoresParaInsert() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    protected String obtenerListaDeAtributosYValoresParaUpdate() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public Integer insertar(CuentaBancaria cuentaBancaria) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public Integer modificar(CuentaBancaria cuentaBancaria) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public Integer eliminar(CuentaBancaria cuentaBancaria) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public ArrayList<CuentaBancaria> listarTodos() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
 }

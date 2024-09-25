@@ -6,83 +6,86 @@ package pe.edu.pucp.TemuFans.Empresa.model;
 
 
 public class CuentaBancaria {
-    private Integer numeroCuenta;
-    private Integer CCI;
-    private String nombreTitular;
-    private String nombreBanco;
+    private Integer codigoInterbancario;
+    private Integer idUsuario;
+    private Integer idBanco;
+    private Integer IBAN;
     private Estado estado;
+    private Moneda moneda;
     
     public CuentaBancaria() {
-        this.numeroCuenta = null;
-        this.CCI = null;
-        this.nombreTitular = null;
-        this.nombreBanco = null;
+        this.codigoInterbancario = null;
+        this.idUsuario = null;
+        this.idBanco = null;
+        this.IBAN = null;
         this.estado = null;
+        this.moneda = null;
     }
-
-    public CuentaBancaria(Integer numeroCuenta, Integer CCI, String nombreTitular, String nombreBanco, Estado estado) {
-        this.numeroCuenta = numeroCuenta;
-        this.CCI = CCI;
-        this.nombreTitular = nombreTitular;
-        this.nombreBanco = nombreBanco;
+    
+    public CuentaBancaria(Integer codigoInterbancario, Integer idUsuario, Integer idBanco, Integer IBAN, Estado estado, Moneda moneda) {
+        this.codigoInterbancario = codigoInterbancario;
+        this.idUsuario = idUsuario;
+        this.idBanco = idBanco;
+        this.IBAN = IBAN;
         this.estado = estado;
+        this.moneda = moneda;
     }
     
     
     /**
-     * @return the numeroCuenta
+     * @return the codigoInterbancario
      */
-    public Integer getNumeroCuenta() {
-        return numeroCuenta;
+    public Integer getCodigoInterbancario() {
+        return codigoInterbancario;
     }
 
     /**
-     * @param numeroCuenta the numeroCuenta to set
+     * @param codigoInterbancario the codigoInterbancario to set
      */
-    public void setNumeroCuenta(Integer numeroCuenta) {
-        this.numeroCuenta = numeroCuenta;
+    public void setCodigoInterbancario(Integer codigoInterbancario) {
+        this.codigoInterbancario = codigoInterbancario;
     }
 
     /**
-     * @return the CCI
+     * @return the idUsuario
      */
-    public Integer getCCI() {
-        return CCI;
+    public Integer getIdUsuario() {
+        return idUsuario;
     }
 
     /**
-     * @param CCI the CCI to set
+     * @param idUsuario the idUsuario to set
      */
-    public void setCCI(Integer CCI) {
-        this.CCI = CCI;
+    public void setIdUsuario(Integer idUsuario) {
+        this.idUsuario = idUsuario;
     }
 
     /**
-     * @return the nombreTitular
+     * @return the idBanco
      */
-    public String getNombreTitular() {
-        return nombreTitular;
+    public Integer getIdBanco() {
+        return idBanco;
     }
 
     /**
-     * @param nombreTitular the nombreTitular to set
+     * @param idBanco the idBanco to set
      */
-    public void setNombreTitular(String nombreTitular) {
-        this.nombreTitular = nombreTitular;
+    public void setIdBanco(Integer idBanco) {
+        this.idBanco = idBanco;
     }
 
     /**
-     * @return the nombreBanco
+     * @return the IBAN
      */
-    public String getNombreBanco() {
-        return nombreBanco;
+    public Integer getIBAN() {
+        return IBAN;
     }
 
     /**
-     * @param nombreBanco the nombreBanco to set
+     * @param IBAN the IBAN to set
      */
-    public void setNombreBanco(String nombreBanco) {
-        this.nombreBanco = nombreBanco;
+    public void setIBAN(Integer IBAN) {
+        this.IBAN = IBAN;
     }
 
     /**
@@ -98,5 +101,20 @@ public class CuentaBancaria {
     public void setEstado(Estado estado) {
         this.estado = estado;
     }
+
+    /**
+     * @return the moneda
+     */
+    public Moneda getMoneda() {
+        return moneda;
+    }
+
+    /**
+     * @param moneda the moneda to set
+     */
+    public void setMoneda(Moneda moneda) {
+        this.moneda = moneda;
+    }
+    
     
 }

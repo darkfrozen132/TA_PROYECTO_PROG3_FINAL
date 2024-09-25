@@ -14,45 +14,69 @@ import pe.edu.pucp.TemuFans.db.DAOImpl;
  * @author Ricardo
  */
 public class EmpresaDAOImpl extends DAOImpl implements EmpresaDAO {
-    private Empresa empresa;
+     private Empresa empresa;
 
-    public EmpresaDAOImpl(String nombre_tabla) {
-        super("Empresa");
+    public EmpresaDAOImpl() {
+        super("Empresa");  
         this.empresa=null;
     }
+
+
+     @Override
+    public Integer insertar(Empresa empresa) {
+        this.empresa = empresa;
+        return insertar();  
+    }
+
+
+     @Override
+    public Integer modificar(Empresa empresa) {
+        this.empresa = empresa;
+        return modificar();  
+    }
+
+
+     @Override
+    public Integer eliminar(Empresa empresa) {
+        this.empresa = empresa;
+        return eliminar();  
+    }
+
     @Override
     protected String obtenerListaDeAtributosParaInsert() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return "idEmpresa, idUsuario, nombreCEO";
     }
 
     @Override
     protected String obtenerListaDeValoresParaInsert() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String sql = "";
+        sql = sql.concat(this.empresa.getIdEmpresa().toString());
+        sql = sql.concat(", ");
+        sql = sql.concat(this.empresa.getIdUsuario().toString());
+        sql = sql.concat(", ");
+        sql = sql.concat("'").concat(this.empresa.getNombreCEO()).concat("'");
+        return sql;
     }
 
     @Override
     protected String obtenerListaDeAtributosYValoresParaUpdate() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String sql = "";
+        sql = sql.concat("idEmpresa = " + this.empresa.getIdEmpresa().toString());
+        sql = sql.concat(", ");
+        sql = sql.concat("idUsuario = " + this.empresa.getIdUsuario().toString());
+        sql = sql.concat(", ");
+        sql = sql.concat("nombreCEO = '").concat(this.empresa.getNombreCEO()).concat("'");
+        return sql;
     }
 
     @Override
-    public Integer insertar(Empresa empresa) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    protected String obtenerCondicionWhereId() {
+        // Retorna la condición WHERE para identificar la empresa por su ID
+        return "idEmpresa = " + this.empresa.getIdEmpresa();
     }
-
-    @Override
-    public Integer modificar(Empresa empresa) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public Integer eliminar(Empresa empresa) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
+    
     @Override
     public ArrayList<Empresa> listarTodos() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-    
 }

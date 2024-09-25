@@ -22,37 +22,69 @@ public class CuentaBancariaDAOImpl extends DAOImpl implements CuentaBancariaDAO{
     }
     @Override
     protected String obtenerListaDeAtributosParaInsert() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return "codigoInterbancario, idUsuario, idBanco, IBAN, estado, moneda";
     }
 
     @Override
     protected String obtenerListaDeValoresParaInsert() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String sql = "";
+        sql = sql.concat(this.cuentaBancaria.getCodigoInterbancario().toString());
+        sql = sql.concat(", ");
+        sql = sql.concat(this.cuentaBancaria.getIdUsuario().toString());
+        sql = sql.concat(", ");
+        sql = sql.concat(this.cuentaBancaria.getIdBanco().toString());
+        sql = sql.concat(", ");
+        sql = sql.concat(this.cuentaBancaria.getIBAN().toString());
+        sql = sql.concat(", ");
+        sql = sql.concat("'").concat(this.cuentaBancaria.getEstado().toString()).concat("'");
+        sql = sql.concat(", ");
+        sql = sql.concat("'").concat(this.cuentaBancaria.getMoneda().toString()).concat("'");
+        return sql;
     }
 
     @Override
     protected String obtenerListaDeAtributosYValoresParaUpdate() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String sql = "";
+        sql = sql.concat("codigoInterbancario = " + this.cuentaBancaria.getCodigoInterbancario().toString());
+        sql = sql.concat(", ");
+        sql = sql.concat("idUsuario = " + this.cuentaBancaria.getIdUsuario().toString());
+        sql = sql.concat(", ");
+        sql = sql.concat("idBanco = " + this.cuentaBancaria.getIdBanco().toString());
+        sql = sql.concat(", ");
+        sql = sql.concat("IBAN = " + this.cuentaBancaria.getIBAN().toString());
+        sql = sql.concat(", ");
+        sql = sql.concat("estado = '" + this.cuentaBancaria.getEstado().toString() + "'");
+        sql = sql.concat(", ");
+        sql = sql.concat("moneda = '" + this.cuentaBancaria.getMoneda().toString() + "'");
+        return sql;
     }
 
     @Override
     public Integer insertar(CuentaBancaria cuentaBancaria) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.cuentaBancaria=cuentaBancaria;
+        return this.insertar();
     }
 
     @Override
     public Integer modificar(CuentaBancaria cuentaBancaria) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.cuentaBancaria=cuentaBancaria;
+        return this.modificar();
     }
 
     @Override
     public Integer eliminar(CuentaBancaria cuentaBancaria) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.cuentaBancaria=cuentaBancaria;
+        return this.eliminar();
     }
 
     @Override
     public ArrayList<CuentaBancaria> listarTodos() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    protected String obtenerCondicionWhereId() {
+        return "codigoInterbancario = " + this.cuentaBancaria.getCodigoInterbancario();
     }
     
 }

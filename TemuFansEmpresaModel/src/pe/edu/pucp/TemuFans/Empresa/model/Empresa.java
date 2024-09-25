@@ -4,51 +4,64 @@
  */
 package pe.edu.pucp.TemuFans.Empresa.model;
 
-import java.util.ArrayList;
-import pe.edu.pucp.TemuFans.Inventario.model.Almacen;
-import pe.edu.pucp.TemuFans.Persona.model.Usuario;
 
 public class Empresa {
-    private ArrayList<Usuario> personas;
-    private ArrayList<Almacen> almacenes;
-    
+    private Integer idEmpresa;
+    private Integer idUsuario;
+    private String nombreCEO;
+
+    public Empresa(Integer idEmpresa, Integer idUsuario, String nombreCEO) {
+        this.idEmpresa = idEmpresa;
+        this.idUsuario = idUsuario;
+        this.nombreCEO = nombreCEO;
+    }
+
     public Empresa() {
-        this.personas = null;
-        this.almacenes = null;
-    }
-
-    public Empresa(ArrayList<Usuario> personas, ArrayList<Almacen> almacenes) {
-        this.personas = personas;
-        this.almacenes = almacenes;
-    }
-    
-    
-    /**
-     * @return the personas
-     */
-    public ArrayList<Usuario> getPersonas() {
-        return personas;
+        this.idEmpresa = null;
+        this.idUsuario = null;
+        this.nombreCEO = null;
     }
 
     /**
-     * @param personas the personas to set
+     * @return the idEmpresa
      */
-    public void setPersonas(ArrayList<Usuario> personas) {
-        this.personas = personas;
+    public Integer getIdEmpresa() {
+        return idEmpresa;
     }
 
     /**
-     * @return the almacenes
+     * @param idEmpresa the idEmpresa to set
      */
-    public ArrayList<Almacen> getAlmacenes() {
-        return almacenes;
+    public void setIdEmpresa(Integer idEmpresa) {
+        this.idEmpresa = idEmpresa;
     }
 
     /**
-     * @param almacenes the almacenes to set
+     * @return the idUsuario
      */
-    public void setAlmacenes(ArrayList<Almacen> almacenes) {
-        this.almacenes = almacenes;
+    public Integer getIdUsuario() {
+        return idUsuario;
+    }
+
+    /**
+     * @param idUsuario the idUsuario to set
+     */
+    public void setIdUsuario(Integer idUsuario) {
+        this.idUsuario = idUsuario;
+    }
+
+    /**
+     * @return the nombreCEO
+     */
+    public String getNombreCEO() {
+        return nombreCEO;
+    }
+
+    /**
+     * @param nombreCEO the nombreCEO to set
+     */
+    public void setNombreCEO(String nombreCEO) {
+        this.nombreCEO = nombreCEO;
     }
     
     

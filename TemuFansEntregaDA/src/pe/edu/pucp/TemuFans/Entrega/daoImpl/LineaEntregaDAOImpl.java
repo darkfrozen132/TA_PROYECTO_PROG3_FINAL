@@ -17,38 +17,62 @@ import pe.edu.pucp.TemuFans.db.DAOImpl;
 public class LineaEntregaDAOImpl extends DAOImpl implements LineaEntregaDAO{
     private LineaEntrega lineaEntrega;
 
+    
     public LineaEntregaDAOImpl() {
-        super("LineaEntrega");
+        super("LineaEntrega");  
+    }
+
+    
+    @Override
+    public Integer insertar(LineaEntrega lineaEntrega) {
+        this.lineaEntrega = lineaEntrega;
+        return insertar(); 
+    }
+
+   
+    @Override
+    public Integer modificar(LineaEntrega lineaEntrega) {
+        this.lineaEntrega = lineaEntrega;
+        return modificar();  
+    }
+
+    
+    @Override
+    public Integer eliminar(LineaEntrega lineaEntrega) {
+        this.lineaEntrega = lineaEntrega;
+        return eliminar();  
     }
 
     @Override
     protected String obtenerListaDeAtributosParaInsert() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        
+        return "idPaquete, idTorre";
     }
 
     @Override
     protected String obtenerListaDeValoresParaInsert() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        
+        String sql = "";
+        sql = sql.concat(this.lineaEntrega.getPaquete().getIdPaquete()); 
+        sql = sql.concat(", ");
+        sql = sql.concat(this.lineaEntrega.getTorre().getIdTorre());  
+        return sql;
     }
 
     @Override
     protected String obtenerListaDeAtributosYValoresParaUpdate() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+       
+        String sql = "";
+        sql = sql.concat("idPaquete = " + this.lineaEntrega.getPaquete().getIdPaquete());
+        sql = sql.concat(", ");
+        sql = sql.concat("idTorre = " + this.lineaEntrega.getTorre().getIdTorre());
+        return sql;
     }
 
     @Override
-    public Integer insertar(LineaEntrega lineaEntrega) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public Integer modificar(LineaEntrega lineaEntrega) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public Integer eliminar(LineaEntrega lineaEntrega) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    protected String obtenerCondicionWhereId() {
+        
+        return "idPaquete = " + this.lineaEntrega.getPaquete().getIdPaquete() + " AND idTorre = " + this.lineaEntrega.getTorre().getIdTorre();
     }
 
     @Override

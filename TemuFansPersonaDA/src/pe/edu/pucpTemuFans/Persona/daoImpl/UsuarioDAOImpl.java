@@ -53,7 +53,7 @@ public class UsuarioDAOImpl extends DAOImpl implements UsuarioDAO{
         String sql = "";
         sql = sql.concat("'" + this.usuario.getId().toString() + "'");
         sql = sql.concat(", ");
-        sql = sql.concat(this.usuario.getTipo_usuario());
+        sql = sql.concat("'"+this.usuario.getTipo_usuario());
         sql = sql.concat(", ");
         sql = sql.concat("'" + this.usuario.getTipo_de_doi() + "'");
         sql = sql.concat(", ");

@@ -23,7 +23,7 @@ public class EmpleadoDAOImpl extends DAOImpl implements EmpleadoDAO{
     }
     @Override
     protected  String obtenerListaDeAtributosParaInsert(){
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return "idEmpleado,idUsuario,sueldo";
     }
     @Override
     protected  String obtenerListaDeValoresParaInsert(){

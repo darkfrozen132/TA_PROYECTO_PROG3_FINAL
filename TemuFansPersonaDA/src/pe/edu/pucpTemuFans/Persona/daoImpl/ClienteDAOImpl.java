@@ -22,15 +22,27 @@ public class ClienteDAOImpl extends DAOImpl implements ClienteDAO{
     }
     @Override
     protected  String obtenerListaDeAtributosParaInsert(){
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return "idCliente,idUsuario,fecha_registro";
     }
     @Override
     protected  String obtenerListaDeValoresParaInsert(){
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String sql = "";
+        sql = sql.concat(this.cliente.getIdCliente().toString());
+        sql = sql.concat(", ");
+        sql = sql.concat("'" + this.cliente.getIdUsuario() + "'");
+        sql = sql.concat(", ");
+        sql = sql.concat("'" + this.cliente.getFecha_registro() + "'");        
+        return sql;
     }
     @Override
     protected  String obtenerListaDeAtributosYValoresParaUpdate(){
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String sql = "";
+        sql = sql.concat("idCliente = " + this.cliente.getIdCliente().toString());
+        sql = sql.concat(", ");
+        sql = sql.concat("idUsuario = '" + this.cliente.getIdUsuario() + "'");
+        sql = sql.concat(", ");
+        sql = sql.concat("fecha_registro = '" + this.cliente.getFecha_registro() + "'");        
+        return sql;
     }
 
     @Override
@@ -41,8 +53,8 @@ public class ClienteDAOImpl extends DAOImpl implements ClienteDAO{
 
     @Override
     public Integer modificar(Cliente cliente) {
-        
-        return this.modificar(" ");
+        this.cliente=cliente;
+        return this.modificar();
     }
 
     @Override
@@ -53,6 +65,11 @@ public class ClienteDAOImpl extends DAOImpl implements ClienteDAO{
     @Override
     public ArrayList<Cliente> listarTodos() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+    
+    @Override
+    protected String obtenerId(){
+        return "idCliente="+cliente.getIdCliente().toString(); 
     }
     
     

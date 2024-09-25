@@ -29,12 +29,14 @@ public class UsuarioDAOImpl extends DAOImpl implements UsuarioDAO{
 
     @Override
     public Integer modificar(Usuario usuario) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+       this.usuario=usuario;
+        return this.modificar();
     }
 
     @Override
     public Integer eliminar(Usuario usuario) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.usuario=usuario;
+        return this.eliminar();
     }
 
     @Override
@@ -44,15 +46,57 @@ public class UsuarioDAOImpl extends DAOImpl implements UsuarioDAO{
 
     @Override
     protected  String obtenerListaDeAtributosParaInsert(){
-        return "idUsuario,tipo_usuario,tipo_doi,doi,nombre,correo";
+        return "idUsuario,tipo_usuario,tipo_doi,doi,nombre,correo,direccion,telefono";
     }
     @Override
     protected  String obtenerListaDeValoresParaInsert(){
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String sql = "";
+        sql = sql.concat("'" + this.usuario.getId().toString() + "'");
+        sql = sql.concat(", ");
+        sql = sql.concat(this.usuario.getTipo_usuario());
+        sql = sql.concat(", ");
+        sql = sql.concat("'" + this.usuario.getTipo_de_doi() + "'");
+        sql = sql.concat(", ");
+        sql = sql.concat("'" + this.usuario.getDoi()+ "'");        
+        sql = sql.concat(", ");
+        sql = sql.concat("'" + this.usuario.getNombre()+ "'");        
+        sql = sql.concat(", ");
+        sql = sql.concat("'" + this.usuario.getCorreo()+ "'");        
+        sql = sql.concat(", ");
+        sql = sql.concat("'" + this.usuario.getDireccion()+ "'");        
+        sql = sql.concat(", ");
+        sql = sql.concat("'" + this.usuario.getTelefono()+ "'");        
+        
+        return sql;
     }
+       @Override
+    protected String obtenerListaDeAtributosYValoresParaUpdate() {
+        String sql = "";
+        // Asumimos que "this.usuario" tiene los atributos correctos.
+        sql = sql.concat("idUsuario = " + this.usuario.getId().toString());
+        sql = sql.concat(", ");
+        sql = sql.concat("tipo_usuario = '" + this.usuario.getTipo_usuario() + "'");
+        sql = sql.concat(", ");
+        sql = sql.concat("tipo_doi = '" + this.usuario.getTipo_de_doi() + "'");
+        sql = sql.concat(", ");
+        sql = sql.concat("doi = '" + this.usuario.getDoi() + "'");
+        sql = sql.concat(", ");
+        sql = sql.concat("nombre = '" + this.usuario.getNombre() + "'");
+        sql = sql.concat(", ");
+        sql = sql.concat("correo = '" + this.usuario.getCorreo() + "'");
+        sql = sql.concat(", ");
+        sql = sql.concat("direccion = '" + this.usuario.getDireccion() + "'");
+        sql = sql.concat(", ");
+        sql = sql.concat("telefono = '" + this.usuario.getTelefono() + "'");
+
+        return sql;
+    }
+
+    
+    
     @Override
-    protected  String obtenerListaDeAtributosYValoresParaUpdate(){
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    protected String obtenerCondicionWhereId(){
+        return "idProveedor="+usuario.getId().toString(); 
     }
     
 }

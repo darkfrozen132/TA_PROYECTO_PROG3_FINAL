@@ -27,30 +27,49 @@ public class ProveedorDAOImpl extends DAOImpl implements ProveedorDAO{
     }
     @Override
     protected  String obtenerListaDeValoresParaInsert(){
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String sql = "";
+        sql = sql.concat(this.proveedor.getIdProveedor().toString());
+        sql = sql.concat(", ");
+        sql = sql.concat("'" + this.proveedor.getIdUsuario() + "'");
+        sql = sql.concat(", ");
+        sql = sql.concat("'" + this.proveedor.getFecha_registro().toString()+ "'");        
+        return sql;
     }
     @Override
     protected  String obtenerListaDeAtributosYValoresParaUpdate(){
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String sql = "";
+        sql = sql.concat("idProveedor = " + this.proveedor.getIdProveedor().toString());
+        sql = sql.concat(", ");
+        sql = sql.concat("idUsuario = '" + this.proveedor.getIdUsuario().toString() + "'");
+        sql = sql.concat(", ");
+        sql = sql.concat("fecha_registro = '" + this.proveedor.getFecha_registro().toString() + "'");        
+        return sql;
     }
 
     @Override
     public Integer insertar(Proveedor proveedor) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.proveedor=proveedor;
+        return this.insertar();
     }
 
     @Override
     public Integer modificar(Proveedor proveedor) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.proveedor=proveedor;
+        return this.modificar();
     }
 
     @Override
     public Integer eliminar(Proveedor proveedor) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.proveedor=proveedor;
+        return this.eliminar();
     }
 
     @Override
     public ArrayList<Proveedor> listarTodos() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+    @Override
+    protected String obtenerCondicionWhereId(){
+        return "idProveedor="+proveedor.getIdProveedor().toString(); 
     }
 }

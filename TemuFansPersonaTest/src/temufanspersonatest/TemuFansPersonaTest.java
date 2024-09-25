@@ -20,9 +20,9 @@ public class TemuFansPersonaTest {
      */
     public static void main(String[] args) {
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");        
-        Cliente a1= new Cliente("1","1","1","Juan","asdsda",7945);
+        
         ClienteDAO a2=new ClienteDAOImpl();
-        a2.insertar(a1);
+        
     }
     
 }

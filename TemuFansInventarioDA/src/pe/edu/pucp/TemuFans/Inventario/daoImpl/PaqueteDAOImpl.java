@@ -23,27 +23,38 @@ public class PaqueteDAOImpl extends DAOImpl implements PaqueteDAO{
 
     @Override
     protected String obtenerListaDeAtributosParaInsert() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return "idPaquete, idProducto, cantidadProductos, peso";
     }
 
     @Override
     protected String obtenerListaDeValoresParaInsert() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String sql = "";
+        sql = sql.concat(this.paquete.getIdPaquete().toString());
+        sql = sql.concat(", ");
+        sql = sql.concat("'" + this.paquete.getIdProducto().toString()+ "'");
+        sql = sql.concat(", ");
+        sql = sql.concat("'" + this.paquete.getCantidadProductos().toString()+ "'");
+        sql = sql.concat(", ");
+        sql = sql.concat("'" + this.paquete.getPeso().toString()+ "'");
+        return sql;
     }
 
     @Override
     public Integer insertar(Paquete paquete) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.paquete = paquete;
+        return insertar();
     }
 
     @Override
     public Integer modificar(Paquete paquete) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.paquete = paquete;
+        return modificar();
     }
 
     @Override
     public Integer eliminar(Paquete paquete) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.paquete = paquete;
+        return eliminar();
     }
 
     @Override
@@ -53,6 +64,19 @@ public class PaqueteDAOImpl extends DAOImpl implements PaqueteDAO{
 
     @Override
     protected String obtenerListaDeAtributosYValoresParaUpdate() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String sql = "";
+        sql = sql.concat("idMarca = " + this.paquete.getIdPaquete().toString());
+        sql = sql.concat(", ");
+        sql = sql.concat("nombre = '" + this.paquete.getIdProducto().toString()+ "'");
+        sql = sql.concat(", ");
+        sql = sql.concat("descripcion = '" + this.paquete.getCantidadProductos().toString()+ "'");        
+        sql = sql.concat(", ");
+        sql = sql.concat("descripcion = '" + this.paquete.getPeso().toString()+ "'");        
+        return sql;
+    }
+
+    @Override
+    protected String obtenerCondicionWhereId() {
+        return "idPaquete="+paquete.getIdPaquete().toString();
     }
 }

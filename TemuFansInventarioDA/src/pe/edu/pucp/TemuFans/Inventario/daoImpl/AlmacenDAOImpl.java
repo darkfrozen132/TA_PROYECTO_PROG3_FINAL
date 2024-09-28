@@ -23,27 +23,36 @@ public class AlmacenDAOImpl extends DAOImpl implements AlmacenDAO{
 
     @Override
     protected String obtenerListaDeAtributosParaInsert() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return "idAlmacen, direccion, cantidadTorres";
     }
 
     @Override
     protected String obtenerListaDeValoresParaInsert() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String sql = "";
+        sql = sql.concat(this.almacen.getIdAlmacen().toString());
+        sql = sql.concat(", ");
+        sql = sql.concat("'" + this.almacen.getDireccion()+ "'");
+        sql = sql.concat(", ");
+        sql = sql.concat("'" + this.almacen.getCantidadTorres().toString()+ "'");
+        return sql;
     }
 
     @Override
     public Integer insertar(Almacen almacen) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.almacen = almacen;
+        return insertar();
     }
 
     @Override
     public Integer modificar(Almacen almacen) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.almacen = almacen;
+        return modificar();
     }
 
     @Override
     public Integer eliminar(Almacen almacen) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.almacen = almacen;
+        return eliminar();
     }
 
     @Override
@@ -53,6 +62,17 @@ public class AlmacenDAOImpl extends DAOImpl implements AlmacenDAO{
 
     @Override
     protected String obtenerListaDeAtributosYValoresParaUpdate() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String sql = "";
+        sql = sql.concat("idAlmacen = " + this.almacen.getIdAlmacen().toString());
+        sql = sql.concat(", ");
+        sql = sql.concat("direccion = '" + this.almacen.getDireccion()+ "'");
+        sql = sql.concat(", ");
+        sql = sql.concat("cantidadTorres = '" + this.almacen.getCantidadTorres().toString()+ "'");        
+        return sql;
+    }
+
+    @Override
+    protected String obtenerCondicionWhereId() {
+        return "idTorre="+almacen.getIdAlmacen().toString();
     }
 }

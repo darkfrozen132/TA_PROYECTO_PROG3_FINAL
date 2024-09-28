@@ -5,8 +5,8 @@
         <group>
             <file>file:/D:/yo/programacion%203/TA/gitTA/TA_PROYECTO_PROG3_FINAL/TemuFansInventarioDA/src/pe/edu/pucp/TemuFans/Inventario/daoImpl/PaqueteDAOImpl.java</file>
             <file>file:/D:/yo/programacion%203/TA/gitTA/TA_PROYECTO_PROG3_FINAL/TemuFansInventarioDA/src/pe/edu/pucp/TemuFans/Inventario/daoImpl/MarcaDAOImpl.java</file>
-            <file>file:/D:/yo/programacion%203/TA/gitTA/TA_PROYECTO_PROG3_FINAL/TemuFansInventarioDA/src/pe/edu/pucp/TemuFans/Inventario/daoImpl/DimensionDAOImpl.java</file>
             <file>file:/D:/yo/programacion%203/TA/gitTA/TA_PROYECTO_PROG3_FINAL/TemuFansInventarioDA/src/pe/edu/pucp/TemuFans/Inventario/daoImpl/TorreDAOImpl.java</file>
+            <file>file:/D:/yo/programacion%203/TA/gitTA/TA_PROYECTO_PROG3_FINAL/TemuFansInventarioDA/src/pe/edu/pucp/TemuFans/Inventario/daoImpl/AlmacenDAOImpl.java</file>
             <file>file:/D:/yo/programacion%203/TA/gitTA/TA_PROYECTO_PROG3_FINAL/TemuFansInventarioDA/src/pe/edu/pucp/TemuFans/Inventario/daoImpl/ProductoDAOImpl.java</file>
         </group>
     </open-files>

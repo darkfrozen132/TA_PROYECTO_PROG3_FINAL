@@ -9,47 +9,34 @@ package pe.edu.pucp.TemuFans.Inventario.model;
  * @author usuario
  */
 public class Producto {
-    private String idProducto;
+    private Integer idProducto;
+    private Integer idMarca;
     private String SKU;
     private String nombre;
     private Double precioUnitario;
-    private Double precioVenta;
-    private TipoProducto tipoProducto;
-    private Marca marca;
+    private String tipo;
+    private EstadoProducto estadoProducto;
 
-    public Producto(String idProducto, String SKU, String nombre, Double precioUnitario, Double precioVenta, TipoProducto tipoProducto, Marca marca) {
+    public Producto(Integer idProducto, Integer idMarca, String SKU, String nombre, Double precioUnitario, String tipo, EstadoProducto estadoProducto) {
         this.idProducto = idProducto;
+        this.idMarca = idMarca;
         this.SKU = SKU;
         this.nombre = nombre;
         this.precioUnitario = precioUnitario;
-        this.precioVenta = precioVenta;
-        this.tipoProducto = tipoProducto;
-        this.marca = marca;
+        this.tipo = tipo;
+        this.estadoProducto = estadoProducto;
     }
     
     public Producto() {
         this.idProducto = null;
+        this.idMarca = null;
         this.SKU = null;
         this.nombre = null;
         this.precioUnitario = null;
-        this.precioVenta = null;
-        this.tipoProducto = null;
-        this.marca = null;
+        this.tipo = null;
+        this.estadoProducto = null;
     }
 
-    /**
-     * @return the idProducto
-     */
-    public String getIdProducto() {
-        return idProducto;
-    }
-
-    /**
-     * @param idProducto the idProducto to set
-     */
-    public void setIdProducto(String idProducto) {
-        this.idProducto = idProducto;
-    }
 
     /**
      * @return the SKU
@@ -94,46 +81,61 @@ public class Producto {
     }
 
     /**
-     * @return the precioVenta
+     * @return the idProducto
      */
-    public Double getPrecioVenta() {
-        return precioVenta;
+    public Integer getIdProducto() {
+        return idProducto;
     }
 
     /**
-     * @param precioVenta the precioVenta to set
+     * @param idProducto the idProducto to set
      */
-    public void setPrecioVenta(Double precioVenta) {
-        this.precioVenta = precioVenta;
+    public void setIdProducto(Integer idProducto) {
+        this.idProducto = idProducto;
     }
 
     /**
-     * @return the tipoProducto
+     * @return the idMarca
      */
-    public TipoProducto getTipoProducto() {
-        return tipoProducto;
+    public Integer getIdMarca() {
+        return idMarca;
     }
 
     /**
-     * @param tipoProducto the tipoProducto to set
+     * @param idMarca the idMarca to set
      */
-    public void setTipoProducto(TipoProducto tipoProducto) {
-        this.tipoProducto = tipoProducto;
+    public void setIdMarca(Integer idMarca) {
+        this.idMarca = idMarca;
     }
 
     /**
-     * @return the marca
+     * @return the tipo
      */
-    public Marca getMarca() {
-        return marca;
+    public String getTipo() {
+        return tipo;
     }
 
     /**
-     * @param marca the marca to set
+     * @param tipo the tipo to set
      */
-    public void setMarca(Marca marca) {
-        this.marca = marca;
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
+
+    /**
+     * @return the estadoProducto
+     */
+    public EstadoProducto getEstadoProducto() {
+        return estadoProducto;
+    }
+
+    /**
+     * @param estadoProducto the estadoProducto to set
+     */
+    public void setEstadoProducto(EstadoProducto estadoProducto) {
+        this.estadoProducto = estadoProducto;
+    }
+
     
     
 }

@@ -23,27 +23,36 @@ public class TorreDAOImpl extends DAOImpl implements TorreDAO{
 
     @Override
     protected String obtenerListaDeAtributosParaInsert() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return "idAlmacen, nroTorre, pesoMaximo";
     }
 
     @Override
     protected String obtenerListaDeValoresParaInsert() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String sql = "";
+        sql = sql.concat(this.torre.getIdAlmacen().toString());
+        sql = sql.concat(", ");
+        sql = sql.concat("'" + this.torre.getNroTorre().toString()+ "'");
+        sql = sql.concat(", ");
+        sql = sql.concat("'" + this.torre.getPesomaximo().toString()+ "'");
+        return sql;
     }
 
     @Override
     public Integer insertar(Torre torre) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.torre = torre;
+        return insertar();
     }
 
     @Override
     public Integer modificar(Torre torre) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.torre = torre;
+        return modificar();
     }
 
     @Override
     public Integer eliminar(Torre torre) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.torre = torre;
+        return eliminar();
     }
 
     @Override
@@ -53,6 +62,17 @@ public class TorreDAOImpl extends DAOImpl implements TorreDAO{
 
     @Override
     protected String obtenerListaDeAtributosYValoresParaUpdate() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String sql = "";
+        sql = sql.concat("idAlmacen = " + this.torre.getIdAlmacen().toString());
+        sql = sql.concat(", ");
+        sql = sql.concat("nroTorre = '" + this.torre.getNroTorre().toString()+ "'");
+        sql = sql.concat(", ");
+        sql = sql.concat("pesoMaximo = '" + this.torre.getPesomaximo().toString()+ "'");        
+        return sql;
+    }
+
+    @Override
+    protected String obtenerCondicionWhereId() {
+        return "nroTorre="+torre.getNroTorre().toString();
     }
 }

@@ -9,58 +9,39 @@ package pe.edu.pucp.TemuFans.Inventario.model;
  * @author usuario
  */
 public class Paquete {
-    private String idPaquete;
-    private Double pesoMaximoApilado;
+    private Integer idPaquete;
+    private Integer idProducto;
     private Integer cantidadProductos;
-    private Producto producto;
-    private Dimension dimension;
-    private Torre torre;
+    private Double peso;
 
-    public Paquete(String idPaquete, Double pesoMaximoApilado, Integer cantidadProductos, Producto producto, Dimension dimension, Torre torre) {
+    public Paquete(Integer idPaquete, Integer idProducto, Integer cantidadProductos, Double peso) {
         this.idPaquete = idPaquete;
-        this.pesoMaximoApilado = pesoMaximoApilado;
+        this.idProducto = idProducto;
         this.cantidadProductos = cantidadProductos;
-        this.producto = producto;
-        this.dimension = dimension;
-        this.torre = torre;
+        this.peso = peso;
     }
 
     public Paquete() {
         this.idPaquete = null;
-        this.pesoMaximoApilado = null;
+        this.idProducto = null;
         this.cantidadProductos = null;
-        this.producto = null;
-        this.dimension = null;
-        this.torre = null;
+        this.peso = null;
     }
 
     /**
      * @return the idPaquete
      */
-    public String getIdPaquete() {
+    public Integer getIdPaquete() {
         return idPaquete;
     }
 
     /**
      * @param idPaquete the idPaquete to set
      */
-    public void setIdPaquete(String idPaquete) {
+    public void setIdPaquete(Integer idPaquete) {
         this.idPaquete = idPaquete;
     }
 
-    /**
-     * @return the pesoMaximoApilado
-     */
-    public Double getPesoMaximoApilado() {
-        return pesoMaximoApilado;
-    }
-
-    /**
-     * @param pesoMaximoApilado the pesoMaximoApilado to set
-     */
-    public void setPesoMaximoApilado(Double pesoMaximoApilado) {
-        this.pesoMaximoApilado = pesoMaximoApilado;
-    }
 
     /**
      * @return the cantidadProductos
@@ -77,45 +58,32 @@ public class Paquete {
     }
 
     /**
-     * @return the producto
+     * @return the idProducto
      */
-    public Producto getProducto() {
-        return producto;
+    public Integer getIdProducto() {
+        return idProducto;
     }
 
     /**
-     * @param producto the producto to set
+     * @param idProducto the idProducto to set
      */
-    public void setProducto(Producto producto) {
-        this.producto = producto;
+    public void setIdProducto(Integer idProducto) {
+        this.idProducto = idProducto;
     }
 
     /**
-     * @return the dimension
+     * @return the peso
      */
-    public Dimension getDimension() {
-        return dimension;
+    public Double getPeso() {
+        return peso;
     }
 
     /**
-     * @param dimension the dimension to set
+     * @param peso the peso to set
      */
-    public void setDimension(Dimension dimension) {
-        this.dimension = dimension;
+    public void setPeso(Double peso) {
+        this.peso = peso;
     }
 
-    /**
-     * @return the torre
-     */
-    public Torre getTorre() {
-        return torre;
-    }
-
-    /**
-     * @param torre the torre to set
-     */
-    public void setTorre(Torre torre) {
-        this.torre = torre;
-    }
     
 }

@@ -4,46 +4,39 @@
  */
 package pe.edu.pucp.TemuFans.Inventario.model;
 
-import java.util.ArrayList;
 
 /**
  *
  * @author usuario
  */
 public class Almacen {
-    private String idAlmacen;
+    private Integer idAlmacen;
     private String direccion;
     private Integer cantidadTorres;
-    private ArrayList<Torre> torres;
-    private Dimension dimension;
 
-    public Almacen(String idAlmacen, String direccion, Integer cantidadTorres, ArrayList<Torre> torres, Dimension dimension) {
+    public Almacen(Integer idAlmacen, String direccion, Integer cantidadTorres) {
         this.idAlmacen = idAlmacen;
         this.direccion = direccion;
         this.cantidadTorres = cantidadTorres;
-        this.torres = torres;
-        this.dimension = dimension;
     }
 
     public Almacen() {
         this.idAlmacen = null;
         this.direccion = null;
         this.cantidadTorres = null;
-        this.torres = null;
-        this.dimension = null;
     }
 
     /**
      * @return the idAlmacen
      */
-    public String getIdAlmacen() {
+    public Integer getIdAlmacen() {
         return idAlmacen;
     }
 
     /**
      * @param idAlmacen the idAlmacen to set
      */
-    public void setIdAlmacen(String idAlmacen) {
+    public void setIdAlmacen(Integer idAlmacen) {
         this.idAlmacen = idAlmacen;
     }
 
@@ -73,34 +66,6 @@ public class Almacen {
      */
     public void setCantidadTorres(Integer cantidadTorres) {
         this.cantidadTorres = cantidadTorres;
-    }
-
-    /**
-     * @return the torres
-     */
-    public ArrayList<Torre> getTorres() {
-        return torres;
-    }
-
-    /**
-     * @param torres the torres to set
-     */
-    public void setTorres(ArrayList<Torre> torres) {
-        this.torres = torres;
-    }
-
-    /**
-     * @return the dimension
-     */
-    public Dimension getDimension() {
-        return dimension;
-    }
-
-    /**
-     * @param dimension the dimension to set
-     */
-    public void setDimension(Dimension dimension) {
-        this.dimension = dimension;
     }
     
 }

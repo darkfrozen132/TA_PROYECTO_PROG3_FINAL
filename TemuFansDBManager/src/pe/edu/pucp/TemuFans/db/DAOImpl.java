@@ -20,7 +20,7 @@ public abstract class DAOImpl {
 
     public DAOImpl(String nombre_tabla) {
         this.nombre_tabla = nombre_tabla;
-    }    
+    }
 
     protected void cerrarConexion() throws SQLException {
         if (this.conexion != null) {
@@ -72,11 +72,11 @@ public abstract class DAOImpl {
 
     }
     
-    public Integer modificar() {
+    public Integer modificar(String condicionWhere) {
         Integer resultado = 0;
         try {
             this.iniciarTransaccion();
-            String sql = this.generarSQLParaModificacion();
+            String sql = this.generarSQLParaModificacion(condicionWhere);
             resultado = this.ejecutarModificacionesEnBD(sql);
             this.comitarTransaccion();
         } catch (SQLException ex) {
@@ -96,11 +96,11 @@ public abstract class DAOImpl {
     }
 
     // Método para eliminar un registro en la BD
-    public Integer eliminar() {
+    public Integer eliminar(String condicionWhere) {
         Integer resultado = 0;
         try {
             this.iniciarTransaccion();
-            String sql = this.generarSQLParaEliminacion();
+            String sql = this.generarSQLParaEliminacion(condicionWhere);
             resultado = this.ejecutarModificacionesEnBD(sql);
             this.comitarTransaccion();
         } catch (SQLException ex) {
@@ -129,20 +129,19 @@ public abstract class DAOImpl {
         return sql;
     }
     
-    private String generarSQLParaModificacion() {
+    private String generarSQLParaModificacion(String condicionWhere) {
         String sql = "UPDATE " + this.nombre_tabla;
         sql = sql.concat(" SET ");
         sql = sql.concat(this.obtenerListaDeAtributosYValoresParaUpdate());
-        sql = sql.concat(" WHERE "+obtenerCondicionWhereId());
-        
+        sql = sql.concat(" WHERE ");
+        sql = sql.concat(condicionWhere);
         return sql;
     }
-    
 
-    private String generarSQLParaEliminacion() {
+    private String generarSQLParaEliminacion(String condicionWhere) {
         String sql = "DELETE FROM " + this.nombre_tabla;
-        sql = sql.concat(" WHERE "+obtenerCondicionWhereId());
-        
+        sql = sql.concat(" WHERE ");
+        sql = sql.concat(condicionWhere);
         return sql;
     }
     
@@ -150,7 +149,4 @@ public abstract class DAOImpl {
     protected abstract String obtenerListaDeAtributosParaInsert();
     protected abstract String obtenerListaDeValoresParaInsert();
     protected abstract String obtenerListaDeAtributosYValoresParaUpdate();
-    protected abstract String obtenerCondicionWhereId();
-    
 }
-//insert into TABLA values(id,);
